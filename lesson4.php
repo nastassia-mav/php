@@ -1,6 +1,6 @@
 <?php
 
-//EXERCIZE 1
+//EXERCISE 1
 $a=0;
 if($a == 0){
     echo 'Верно';
@@ -8,84 +8,84 @@ if($a == 0){
     echo 'Неверно';
 }
 
-//EXERCIZE 2
+//EXERCISE 2
 if($a > 0){
     echo 'Верно';
 }else{
     echo 'Неверно';
 }
 
-//EXERCIZE 3
+//EXERCISE 3
 if($a < 0){
     echo 'Верно';
 }else{
     echo 'Неверно';
 }
 
-//EXERCIZE 4
+//EXERCISE 4
 if($a >= 0){
     echo 'Верно';
 }else{
     echo 'Неверно';
 }
 
-//EXERCIZE 5
+//EXERCISE 5
 if($a <= 0){
     echo 'Верно';
 }else{
     echo 'Неверно';
 }
 
-//EXERCIZE 6
+//EXERCISE 6
 if($a != 0){
     echo 'Верно';
 }else{
     echo 'Неверно';
 }
 
-//EXERCIZE 7
+//EXERCISE 7
 if($a == 'test'){
     echo 'Верно';
 }else{
     echo 'Неверно';
 }
 
-//EXERCIZE 8
+//EXERCISE 8
 if($a === '1'){
     echo 'Верно';
 }else{
     echo 'Неверно';
 }
 
-//EXERCIZE 9
+//EXERCISE 9
 if($a == null){
     echo 'Верно';
 }else{
     echo 'Неверно';
 }
 
-//EXERCIZE 10
+//EXERCISE 10
 if($a !== null){
     echo 'Верно';
 }else{
     echo 'Неверно';
 }
 
-//EXERCIZE 11
+//EXERCISE 11
 if($a){
     echo 'Верно';
 }else{
     echo 'Неверно';
 }
 
-//EXERCIZE 12
+//EXERCISE 12
 if(!$a){
     echo 'Верно';
 }else{
     echo 'Неверно';
 }
 
-//EXERCIZE 13
+//EXERCISE 13
 $var = true;
 if($var == true){
     echo 'Верно';
@@ -93,7 +93,7 @@ if($var == true){
     echo 'Неверно';
 }
 
-//EXERCIZE 14
+//EXERCISE 14
 $var = true;
 if($var !== true){
     echo 'Верно';
@@ -101,14 +101,14 @@ if($var !== true){
     echo 'Неверно';
 }
 
-//EXERCIZE 15
+//EXERCISE 15
 if($a > 0 and $a < 5){
     echo 'Верно';
 }else{
     echo 'Неверно';
 }
 
-//EXERCIZE 16
+//EXERCISE 16
 if($a == 0 or $a == 2){
     $a += 7;
     echo $a;
@@ -117,21 +117,21 @@ if($a == 0 or $a == 2){
     echo $a;
 }
 
-//EXERCIZE 17
+//EXERCISE 17
 if($a <= 1 and $b >= 3){
     echo $a + $b;
 }else{
     echo $a - $b;
 }
 
-//EXERCIZE 18
+//EXERCISE 18
 if(($a > 2 and $a < 11)or($b >= 6 and $b < 14)){
     echo 'Верно';
 }else{
     echo 'Неверно';
 }
 
-//EXERCIZE 19
+//EXERCISE 19
 switch ($num) {
     case '1':
         $result = 'зима';
@@ -147,7 +147,7 @@ switch ($num) {
     break;
 }
 
-//EXERCIZE 20
+//EXERCISE 20
 $day;
 if($day < 11){
     echo 'Первая декада';
@@ -157,7 +157,7 @@ if($day < 11){
     echo 'Третья декада';
 }
 
-//EXERCIZE 21
+//EXERCISE 21
 $month;
 if($month == 12 or $month <= 2){
     echo 'Зима';
@@ -169,7 +169,7 @@ if($month == 12 or $month <= 2){
     echo 'Осень';
 }
 
-//EXERCIZE 22
+//EXERCISE 22
 $year;
 if(($year % 4 == 0 and $year % 100 != 0) or ($year % 400 == 0)){
     echo 'Високосный';
