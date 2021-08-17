@@ -1,10 +1,10 @@
 <?php
-//EXERCIZE 1
+//EXERCISE 1
 $a=10;
 $b=3;
 echo $a % $b;
 
-//EXERCIZE 5
+//EXERCISE 5
 $total = 0;
 $arr = [4, 2, 5, 19, 13, 0, 10];
 foreach($arr as $i){
@@ -12,18 +12,18 @@ foreach($arr as $i){
 }
 echo sqrt($total);
 
-//EXERCIZE 7
+//EXERCISE 7
 $num = sqrt(587);
 $arr = [];
 $arr['floor'] = floor($num);
 $arr['ceil'] = ceil($num);
 var_dump($arr);
 
-//EXERCIZE 8
+//EXERCISE 8
 $arr = [4, -2, 5, 19, -130, 0, 10];
 echo max($arr).' '.min($arr);
 
-//EXERCIZE 10
+//EXERCISE 10
 $arr = [];
 $num = 10;
 while($num > 0){
@@ -32,7 +32,7 @@ while($num > 0){
 }
 var_dump($arr);
 
-//EXERCIZE 12
+//EXERCISE 12
 $arr = [1, 2, -1, -2, 3, -3];
 for($i=0; $i < 7; $i++){
     if($arr[$i] < 0){
@@ -41,7 +41,7 @@ for($i=0; $i < 7; $i++){
 }
 var_dump($arr);
 
-//EXERCIZE 14
+//EXERCISE 14
 $arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 $total = 0;
 $sum = 1;
