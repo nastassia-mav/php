@@ -1,133 +1,133 @@
 <?php
 
 //EXERCISE 1
-$a=0;
-if($a == 0){
+$a = 0;
+if($a == 0) {
     echo 'Верно';
-}else{
+} else {
     echo 'Неверно';
 }
 
 //EXERCISE 2
-if($a > 0){
+if($a > 0) {
     echo 'Верно';
-}else{
+} else {
     echo 'Неверно';
 }
 
 //EXERCISE 3
-if($a < 0){
+if($a < 0) {
     echo 'Верно';
-}else{
+} else {
     echo 'Неверно';
 }
 
 //EXERCISE 4
-if($a >= 0){
+if($a >= 0) {
     echo 'Верно';
-}else{
+} else {
     echo 'Неверно';
 }
 
 //EXERCISE 5
-if($a <= 0){
+if($a <= 0) {
     echo 'Верно';
-}else{
+} else {
     echo 'Неверно';
 }
 
 //EXERCISE 6
-if($a != 0){
+if($a != 0) {
     echo 'Верно';
-}else{
+} else {
     echo 'Неверно';
 }
 
 //EXERCISE 7
-if($a == 'test'){
+if($a == 'test') {
     echo 'Верно';
-}else{
+} else {
     echo 'Неверно';
 }
 
 //EXERCISE 8
-if($a === '1'){
+if($a === '1') {
     echo 'Верно';
-}else{
+} else {
     echo 'Неверно';
 }
 
 //EXERCISE 9
-if($a == null){
+if($a == null) {
     echo 'Верно';
-}else{
+} else {
     echo 'Неверно';
 }
 
 //EXERCISE 10
-if($a !== null){
+if($a !== null) {
     echo 'Верно';
-}else{
+} else {
     echo 'Неверно';
 }
 
 //EXERCISE 11
-if($a){
+if($a) {
     echo 'Верно';
-}else{
+} else {
     echo 'Неверно';
 }
 
 //EXERCISE 12
-if(!$a){
+if(!$a) {
     echo 'Верно';
-}else{
+} else {
     echo 'Неверно';
 }
 
 //EXERCISE 13
 $var = true;
-if($var == true){
+if($var == true) {
     echo 'Верно';
-}else{
+} else {
     echo 'Неверно';
 }
 
 //EXERCISE 14
 $var = true;
-if($var !== true){
+if($var !== true) {
     echo 'Верно';
-}else{
+} else {
     echo 'Неверно';
 }
 
 //EXERCISE 15
-if($a > 0 and $a < 5){
+if($a > 0 && $a < 5) {
     echo 'Верно';
-}else{
+} else {
     echo 'Неверно';
 }
 
 //EXERCISE 16
-if($a == 0 or $a == 2){
+if($a == 0 || $a == 2) {
     $a += 7;
     echo $a;
-}else{
+} else {
     $a /= 10;
     echo $a;
 }
 
 //EXERCISE 17
-if($a <= 1 and $b >= 3){
+if($a <= 1 && $b >= 3) {
     echo $a + $b;
-}else{
+} else {
     echo $a - $b;
 }
 
 //EXERCISE 18
-if(($a > 2 and $a < 11)or($b >= 6 and $b < 14)){
+if(($a > 2 && $a < 11) || ($b >= 6 && $b < 14)) { 
     echo 'Верно';
-}else{
+} else {
     echo 'Неверно';
 }
 
@@ -135,44 +135,44 @@ if(($a > 2 and $a < 11)or($b >= 6 and $b < 14)){
 switch ($num) {
     case '1':
         $result = 'зима';
-    break;
+        break;
     case '2':
         $result = 'лето';
-    break;
+        break;
     case '3':
         $result = 'осень';
-    break;
+        break;
     case '4':
         $result = 'весна';
-    break;
+        break;
 }
 
 //EXERCISE 20
 $day;
-if($day < 11){
+if($day < 11) {
     echo 'Первая декада';
-}else if($day < 21){
+} elseif($day < 21) {
     echo 'Вторая декада';
-}else{
+} else {
     echo 'Третья декада';
 }
 
 //EXERCISE 21
 $month;
-if($month == 12 or $month <= 2){
+if($month == 12 || $month <= 2) {
     echo 'Зима';
-}else if($month <= 5){
+} elseif($month <= 5) {
     echo 'Весна';
-}else if($month <= 8){
+} elseif($month <= 8) {
     echo 'Лето';
-}else{
+} else {
     echo 'Осень';
 }
 
 //EXERCISE 22
 $year;
-if(($year % 4 == 0 and $year % 100 != 0) or ($year % 400 == 0)){
+if(($year % 4 == 0 && $year % 100 != 0) || ($year % 400 == 0)) {
     echo 'Високосный';
-}else{
+} else {
     echo 'Не високосный';
 }
