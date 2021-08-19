@@ -22,7 +22,7 @@ echo $result;
 $a = 10;
 $b = 2;
 $c = 5;
-echo $a+$b+$c;
+echo $a + $b + $c;
 
 //EXERCISE 5
 $a = 17;
@@ -39,16 +39,16 @@ echo $text;
 
 //EXERCISE 7
 $text1 = 'Привет, ';
-$text2 = "Мир!";
-echo $text1.$text2;
+$text2 = 'Мир!';
+echo $text1 . $text2;
 
 //EXERCISE 8
 $name = 'Анастасия';
-echo "Привет, ".$name."!";
+echo "Привет, $name!";
 
 //EXERCISE 9
 $age = 27;
-echo "Мне ".$age." лет!";
+echo "Мне $age лет!";
 
 //EXERCISE 10
 $text = 'abcde';
@@ -58,7 +58,7 @@ echo $text[4];
 
 //EXERCISE 11
 $text = 'abcde';
-$text[0] = "!";
+$text[0] = '!';
 echo $text;
 
 //EXERCISE 12
@@ -69,19 +69,19 @@ echo (int) $num[0] + (int) $num[1] + (int) $num[2] + (int) $num[3] + (int) $num[
 $hour = 60 * 60;
 $day = $hour * 24;
 $month = $day * 30;
-echo $hour;
-echo $day;
-echo $month;
+echo $hour . '<br>';
+echo $day . '<br>';
+echo $month . '<br>';
 
 //EXERCISE 14
 $hour = 12;
 $minute = 36;
 $second = 54;
-echo $hour.':'.$minute.':'.$second;
+echo $hour . ':' . $minute . ':' . $second;
 
 //EXERCISE 15
 $number = 9;
-echo $number*$number;
+echo $number * $number;
 
 //EXERCISE 16
 $var = 47;
@@ -108,9 +108,9 @@ echo $var;
 //EXERCISE 19
 $var = 10;
 $var += 7;
-$var ++ ;
-$var -- ;
-$var +=  12;
-$var *=  7;
+$var++;
+$var--;
+$var += 12;
+$var *= 7;
 $var -= 15;
 echo $var;
