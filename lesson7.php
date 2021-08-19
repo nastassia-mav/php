@@ -1,4 +1,5 @@
 <?php
+
 //EXERCISE 1
 $str = 'php';
 echo strtoupper($str);
@@ -9,17 +10,17 @@ echo  ucfirst(strtolower($str));
 
 //EXERCISE 8
 $password = 'LONDON';
-if(strlen($password) < 10 and strlen($password) > 5){
+if(strlen($password) < 10 and strlen($password) > 5) {
     echo 'Пароль подходит';
-}else{
+} else {
     echo 'Пароль не подходит';
 }
 
 //EXERCISE 15
 $password = 'LONDON';
-if(strlen($password) > 5){
+if(strlen($password) > 5) {
     echo substr($password, 1, 5).'...';
-}else{
+} else {
     echo $password;
 }
 
@@ -71,7 +72,7 @@ echo $str = implode(', ', $arr);
 //EXERCISE 29
 $str = '2013-12-31';
 $arr = explode('-', $str);
-echo $str = $arr[0].'.'.$arr[1].'.'.$arr[2];
+echo $str = $arr[0] . ' ' . $arr[1] . '.' . $arr[2];
 
 //EXERCISE 30
 $str = '1234567890';
@@ -98,7 +99,7 @@ echo trim($str, '/');
 
 //EXERCISE 35
 $str = 'слова слова слова.';
-echo rtrim($str, '.').'.';
+echo rtrim($str, '.') . '.';
 
 //EXERCISE 43
 $str = 'html, <b>php</b>, js';
@@ -128,6 +129,6 @@ echo $str = str_replace(' ', '', $str);
 $arr = [4234, 2342, 423, 2344552, 76585, 678845468];
 foreach ($arr as $value) {
 	if (strpos($value, '3') !== false) {
-		echo $value."<br>";
+		echo $value . "<br>";
 	}
 }
