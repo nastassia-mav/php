@@ -14,25 +14,25 @@ echo mktime(0, 0, 0, 12, 31);
 echo time() - mktime(13, 12, 59, 3, 15, 2000);
 
 //EXERCISE 5
-echo intval((time() - mktime(7, 23, 48))/3600);
+echo intval((time() - mktime(7, 23, 48)) / 3600);
 
 
 //EXERCISE 6
 echo date('H:i:s, d.m.Y');
 
 //EXERCISE 7
-echo date('Y-m-d')."<br>";
-echo date('d.m.Y')."<br>";
-echo date('d.m.y')."<br>";
-echo date('H:i:s')."<br>";
+echo date('Y-m-d') . "<br>";
+echo date('d.m.Y') . "<br>";
+echo date('d.m.y') . "<br>";
+echo date('H:i:s') . "<br>";
 
 //EXERCISE 8
 echo date('d.m.Y', mktime(0, 0, 0, 2, 12, 2025));
 
 //EXERCISE 9
-$week = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
+$week = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
 echo $week[date('w', mktime(0, 0, 0, 6, 6, 2006))];
-echo $week[date('w', mktime(0, 0, 0, 8, 22, 1989))];
+echo $week[date('w', mktime(0, 0, 0, 29, 11, 1993))];
 
 
 //EXERCISE 10
@@ -47,8 +47,8 @@ $year = 1993;
 echo date('L', mktime(0, 0, 0, 0, 0, $year));
 
 //EXERCISE 13
-$date = '31.12.2011'; // Форма ввода даты
-$week = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
+$date = '31.12.2025';
+$week = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
 $arr = explode('.', $date);
 $mktime = mktime(0, 0, 0, $arr['1'], $arr['0'], $arr['2']);
 echo $mktime;
@@ -64,7 +64,7 @@ echo $mktime;
 echo $months[date('n', $mktime)];
 
 //EXERCISE 15
-$date1 = '2032-08-21';
+$date1 = '2032-08-02';
 $date2 = '2022-02-08';
 $arr_date1 = explode('-', $date1);
 $mktime_date1 = mktime(0, 0, 0, $arr_date1['1'], $arr_date1['2'], $arr_date1['0']);
@@ -74,7 +74,7 @@ $mktime_date2 = mktime(0, 0, 0, $arr_date2['1'], $arr_date2['2'], $arr_date2['0'
 if ($mktime_date1 > $mktime_date2) {
 	echo "Date1 больше Date2<br>";
 	echo $mktime_date1." > ".$mktime_date2;
-}else{
+} else {
 	echo "Date2 больше Date1<br>";
 	echo $mktime_date2." > ".$mktime_date1;
 }
@@ -115,7 +115,7 @@ for ($i=1; $i <= 12; $i++) {
 var_dump($arr_days);
 
 //EXERCISE 21
-$week = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
+$week = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
 $date = date_create(date('Y-m-d'));
 date_modify($date, '-100 days');
 echo $week[date_format($date, 'w')];
