@@ -7,7 +7,6 @@ echo isNumberInRange(5);
 
 //EXERCISE 2
 $arr = [1, 2, 3, 44, 51, 6, 7, 22];
-
 function newArrayInRange($array){
 	foreach ($array as $value) {
 		if (isNumberInRange($value)) {
@@ -16,10 +15,8 @@ function newArrayInRange($array){
 	}
 	var_dump($new_arr);
 }
-
 newArrayInRange($arr);
-
-echo "<br>";
+echo '<br>';
 
 //EXERCISE 3
 function getDigitsSum($number){
@@ -28,16 +25,14 @@ function getDigitsSum($number){
     foreach ($arr as $elem) {
         $sum += intval($elem);
     }
-
     return $sum;
 }
 
-
 //EXERCISE 4
 function getSumInYear(){
-	for ($i=0; $i <= 2021; $i++) {
+	for ($i = 0; $i <= 2021; $i++) {
 		if (getDigitsSum($i) == 13) {
-			echo $i."<br>";
+			echo $i . '<br>';
 		}
 	}
 }
@@ -49,13 +44,11 @@ function isEven($number){
 	}
 	return true;
 }
-
 echo isEven(30);
 
 
 //EXERCISE 6
 $arr = [1, 2, 3, 44, 51, 6, 7, 22];
-
 function evenNumberInArray($arr){
 	foreach ($arr as $value) {
 		if (isEven($value)) {
@@ -64,21 +57,20 @@ function evenNumberInArray($arr){
 	}
 	return $new_arr;
 }
-
 var_dump(evenNumberInArray($arr));
 
 //EXERCISE 7
 function getDivisors($number){
-	for ($i=1; $i <= $number; $i++) { 
+	for ($i = 1; $i <= $number; $i++) { 
 		if ($number % $i === 0) {
 			$new_arr[] = $i;
 		}
 	}
 	return $new_arr;
 }
-echo "<pre>";
+echo '<pre>';
 var_dump(getDivisors(40));
-echo "</pre>";
+echo '</pre>';
 
 //EXERCISE 8
 function getCommonDivisors($number1, $number2){
