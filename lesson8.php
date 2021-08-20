@@ -12,7 +12,7 @@ echo $arr[count($arr)-1];
 $arr = ['456', '567', '46897', '79789', '645', '221', '3'];
 if (in_array('3', $arr) == true) {
    echo "Есть";
-}else{
+} else {
     echo "Нету";
 }
 
@@ -86,7 +86,7 @@ array_splice($arr, 8, 0, [e]);
 var_dump($arr);
 
 //EXERCISE 18
-$arr = ['a'=>1, 'b'=>2, 'c'=>3];
+$arr = ['a' => 1, 'b' => 2, 'c' => 3];
 $keys = array_keys($arr);
 $values = array_values($arr);
 
@@ -96,7 +96,7 @@ $arr2 = [1, 2, 3];
 $arr3 = array_combine($arr, $arr2);
 
 //EXERCISE 20
-$arr = ['a'=>1, 'b'=>2, 'c'=>3];
+$arr = ['a' => 1, 'b' => 2, 'c' => 3];
 $result = array_flip($arr);
 var_dump($result);
 
@@ -123,16 +123,16 @@ var_dump($result);
 
 
 //EXERCISE 25
-$arr = ['3'=>'a', '1'=>'c', '2'=>'e', '4'=>'b'];
+$arr = ['3' => 'a', '1' => 'c', '2' => 'e', '4' => 'b'];
 sort($arr);
 var_dump($arr);
 
 //EXERCISE 26
-$arr = ['a'=>1, 'b'=>2, 'c'=>3];
+$arr = ['a' => 1, 'b' => 2, 'c' => 3];
 echo array_rand($arr);
 
 //EXERCISE 27
-$arr = ['a'=>1, 'b'=>2, 'c'=>3];
+$arr = ['a' => 1, 'b' => 2, 'c' => 3];
 echo array_rand($arr);
 echo $arr[array_rand($arr)];
 
@@ -194,7 +194,7 @@ var_dump($arr);
 
 
 //EXERCISE 38
-$arr = range(1,20);
+$arr = range(1, 20);
 var_dump(array_chunk($arr, 4));
 
 //EXERCISE 39
