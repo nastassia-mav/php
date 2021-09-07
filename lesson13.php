@@ -3,7 +3,7 @@
 $arr = [1, 2, 3, 4, 5];
 $flag = false;
 foreach ($arr as $value) {
-	if ($value == 5) {
+	if ($value === 5) {
 		$flag = true;
 		break;
 	}
@@ -18,7 +18,7 @@ if ($flag) {
 //EXERCISE 2
 $flag = false;
 $int = 31;
-for ($i=2; $i <= 30; $i++) {
+for ($i = 2; $i <= 30; $i++) {
 	if (!($int % $i)) {
 		$flag = true;
 	}
@@ -35,7 +35,7 @@ $flag = false;
 $int = 0;
 $arr = [1, 2, 3, 4, 5, 6, 7, 7, 8];
 foreach ($arr as $value) {
-	if ($int == $value) {
+	if ($int === $value) {
 		$flag = true;
 	} else {
 		$int = $value;
