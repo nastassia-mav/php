@@ -1,7 +1,7 @@
 <?php
 //EXERCISE 1
 function isNumberInRange($number){
-	return ($number > 0 and $number < 10);
+	return ($number > 0 && $number < 10);
 }
 echo isNumberInRange(5);
 
