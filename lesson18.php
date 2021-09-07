@@ -1,7 +1,7 @@
 <?php
 
 //EXERCISE 1
-function translit($string){
+function transliteration($string){
     $converter = array(
     'а' => 'a',   'б' => 'b',   'в' => 'v',
     'г' => 'g',   'д' => 'd',   'е' => 'e',
@@ -29,7 +29,7 @@ function translit($string){
 );
 return strtr($string, $converter);
 }
-echo translit('Котики');
+echo transliteration('Стрелец');
 echo '<br>';
 
 //EXERCISE 2
@@ -46,6 +46,7 @@ if ($number > 4) {
 return $result;
 }
 echo getPluralOrSingular(6, 'банан', 'банана', 'бананов'); 
+echo '<br>';
 
 //EXERCISE 3
 function happyTicket($string){
@@ -58,7 +59,7 @@ $sum_second3_dig = 0;
 for ($g = 3; $g < 6; $g++) { 
     $sum_second3_dig += $arr[$g];
 }
-return $sum_first3_dig+$sum_second3_dig;
+return $sum_first3_dig + $sum_second3_dig;
 }
 echo happyTicket(5552); 
 echo '<br>';
