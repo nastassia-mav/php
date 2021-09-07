@@ -6,7 +6,7 @@
 <?php
 if(isset($_REQUEST["name"])){
     $name = $_REQUEST["name"];
-    echo 'Привет, ' . $name;
+    echo "Привет, $name";
 }
 ?>
 
@@ -28,7 +28,7 @@ if (isset($_REQUEST['submit'])){
 
 //EXERCISE 3
 <?php
-	if (!isset($_REQUEST['age'])) {
+	if (!isset($_REQUEST["age"])) {
 ?>
 		<form action="" method="GET">
 			<input type="text" name="age">
@@ -37,11 +37,10 @@ if (isset($_REQUEST['submit'])){
 <?php
 	}
 ?>
-
 <?php
-	if (isset($_REQUEST['age'])) {
-		$age = strip_tags($_REQUEST['age']);
-		echo 'Ваш возраст: '.$age;
+	if (isset($_REQUEST["age"])) {
+		$age = strip_tags($_REQUEST["age"]);
+		echo "Ваш возраст: $age";
 	}
 ?>
 
@@ -53,15 +52,15 @@ if (isset($_REQUEST['submit'])){
 </form>
 
 <?php
-	if (isset($_REQUEST['submit'])) {
-		$login = 'user';
-		$pass = '123456';
-		$formLogin = trim($_REQUEST['login']);
-		$formPass = trim($_REQUEST['pass']);
+	if (isset($_REQUEST["submit"])) {
+		$login = "user";
+		$pass = "123456";
+		$formLogin = trim($_REQUEST["login"]);
+		$formPass = trim($_REQUEST["pass"]);
 		if ($login == $formLogin and $pass == $formPass) {
-			echo 'Доступ разрешен!';
+			echo "Доступ разрешен!";
 		} else {
-			echo 'Доступ запрещен!';
+			echo "Доступ запрещен!";
 		}
 	}
 ?>
@@ -72,8 +71,8 @@ if (isset($_REQUEST['submit'])){
 	<input type="submit">
 </form>
 <?php
-	if (isset($_REQUEST['submit'])) {
-		$name = $_REQUEST['name'];
+	if (isset($_REQUEST["submit"])) {
+		$name = $_REQUEST["name"];
 		echo $name;
 	}
 ?>
@@ -82,7 +81,7 @@ if (isset($_REQUEST['submit'])){
 <form action="" method="GET">
 	<input name="name" value="<?php if (isset($_GET['name'])) echo $_GET['name']; ?>">
 	<textarea name="message">
-		<?php if (isset($_GET['message'])) echo $_GET['message']; ?>
+		<?php if (isset($_GET["message"])) echo $_GET["message"]; ?>
 	</textarea>
 	<input type="submit">
 </form>
