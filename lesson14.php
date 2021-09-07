@@ -1,22 +1,34 @@
 <?php
 
 //EXERCISE 1
-function func($a, $b) 
+function compareNumbers($a, $b) 
 {
-    return $a == $b;
+    if (is_int($a) && is_int($b)){
+      return $a == $b;
+    } else {
+      return 'Not a number';
+    }
 }
-echo func(5, 5);
+echo compareNumbers(5, 5);
 
 //EXERCISE 2
-function func1($a, $b) 
+function moreThanTen($a, $b) 
 {
-    return $a + $b > 10;
+    if (is_int($a) && is_int($b)){
+      return $a + $b > 10;
+    } else {
+      return 'Not a number';
+    }
 }
-echo func1(6, 5);
+echo moreThanTen(6, 5);
 
 //EXERCISE 3
-function func2($a) 
+function isNegative($a) 
 {
-    return $a > 0;
+    if (is_int($a)){
+      return $a > 0;
+    } else {
+      return 'Not a number';
+    }
 }
-echo func2(6);
+echo isNegative(6);
