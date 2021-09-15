@@ -6,16 +6,16 @@
     $date1 = date_create($date);
     $date2 = date_create('2022-01-01');
     $diff = date_diff($date1, $date2);
-    echo $diff -> format('%a дней осталось до нового года');
+    echo $diff->format('%a дней осталось до нового года');
     echo '<br>';
     ?>
 </fieldset>
 <br>
 
 //EXERCISE 2
-<form action="" method = "post">
+<form action = "" method = "post">
     <fieldset>
-        <input type = "text" name = "test" placeholder = "Введите год" required>&nbsp
+        <input type = "text" name = "test" placeholder = "Введите год" required>
         <input type = "submit" name = "submit"><br><br>
         <?php
         if (!empty($_REQUEST["submit"])) {
@@ -31,7 +31,7 @@
 //EXERCISE 3
 <form action = "" method = "post">
     <fieldset>
-        <input type = "text" name = "test" placeholder = "Введите дату" required>&nbsp в формате '01.12.1990' <br><br>
+        <input type = "text" name = "test" placeholder = "Введите дату" required> в формате '01.12.1990' <br><br>
         <input type = "submit" name = "submit_1"><br><br>
         <?php
         if (!empty($_REQUEST['submit_1'])) {
@@ -51,7 +51,7 @@
     <?php
     $week = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
     $months = [1 => 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
-    $date = explode('-', date('w-j-n-Y')); 
+    $date = explode('-', date('w-j-n-Y'));
     echo $date[1] . ' ' . $months[$date[2]] . ' ' . $date[3] . ' года, ' . $week[$date[0]]
     ?>
 </fieldset>
@@ -60,24 +60,24 @@
 //EXERCISE 5
 <fieldset>
     <form action = "" method = "post">
-        <input type = "text" name = "test" placeholder = "Дата рождения" required>&nbsp
+        <input type = "text" name = "test" placeholder = "Дата рождения" required>
         <input type = "submit" name = "submit_2"><br><br>
         <?php
         $date = explode('-', date('d-m-Y'));
         $today = date('z', mktime(12, 0, 0, $date[1], $date[0], $date[2]));
         if (!empty($_REQUEST['submit_2'])) {
-            $birthday = explode('.', $_REQUEST['test']); 
+            $birthday = explode('.', $_REQUEST['test']);
             echo 'Введена дата: ' . $_REQUEST['test'], '<br>';
-            $date_birth = date('z', mktime(12, 0, 0, $birthday[1], $birthday[0]));
-            if ($date_birth > $today) {
-                $date_of_birth = $date_birth - $today + 1;
-                echo 'до дня рождения пользователя осталось ' . $date_of_birth . ' дней', '<br>';
+            $dateBirth = date('z', mktime(12, 0, 0, $birthday[1], $birthday[0]));
+            if ($dateBirth > $today) {
+                $dateOfBirth = $dateBirth - $today + 1;
+                echo 'до дня рождения пользователя осталось ' . $dateOfBirth . ' дней', '<br>';
             } else {
-                $next_date_birth = date('z', mktime(12, 0, 0,
+                $nextDateBirth = date('z', mktime(12, 0, 0,
                     $birthday[1], $birthday[0], $date[2] + 1));
-                $all_day_this_year = date('z', mktime(12, 0, 0, 12, 31));
-                $date_of_birth = ($all_day_this_year - $today) + $next_date_birth + 1;
-                echo 'до дня рождения пользователя осталось ' . $date_of_birth . ' дней', '<br>';
+                $allDayThisYear = date('z', mktime(12, 0, 0, 12, 31));
+                $dateOfBirth = ($allDayThisYear - $today) + $nextDateBirth + 1;
+                echo 'до дня рождения пользователя осталось ' . $dateOfBirth . ' дней', '<br>';
             }
         }
         ?>
@@ -88,16 +88,16 @@
 //EXERCISE 6
 <fieldset>
     <?php
-    $first_sunday = date('z', strtotime("first Sunday of March")); 
-    $today = date('z', strtotime('today')); 
-    if ($first_sunday > $today) {
-        $count_day = $first_sunday - $today;
-        echo $count_day . ' - дней осталось до ближайшей масленницы';
+    $firstSunday = date('z', strtotime("first Sunday of March"));
+    $today = date('z', strtotime('today'));
+    if ($firstSunday > $today) {
+        $countDay = $firstSunday - $today;
+        echo $countDay . ' - дней осталось до ближайшей масленницы';
     } else {
-        $first_sunday_next = date('z', strtotime("first Sunday of March next Year"));
-        $last_day = date('z', mktime(0, 0, 0, 12, 31));
-        $count_day = ($last_day - $today) + $first_sunday_next;
-        echo $count_day . ' - дней осталось до ближайшей масленницы следующего года';
+        $firstSundayNext = date('z', strtotime("first Sunday of March next Year"));
+        $lastDay = date('z', mktime(0, 0, 0, 12, 31));
+        $countDay = ($lastDay - $today) + $firstSundayNext;
+        echo $countDay . ' - дней осталось до ближайшей масленницы следующего года';
     }
     ?>
 </fieldset>
@@ -106,47 +106,47 @@
 //EXERCISE 7
 <fieldset>
     <form action = "" method = "post">
-        <input type = "text" name = "test" checked>&nbsp
+        <input type = "text" name = "test" checked>
         <input type = "submit" name = "submit_3"><br>
     </form>
 
     <?php
     if (!empty($_REQUEST['submit_3'])) {
         $date = implode(array_reverse(explode('.', $_REQUEST['test'])));
-        if ($date >= '0120' and $date <= '0218') {
+        if ($date >= '0120' && $date <= '0218') {
             echo 'Водолей';
         }
-        if ($date >= '0219' and $date <= '0320') {
+        if ($date >= '0219' && $date <= '0320') {
             echo 'Рыбы';
         }
-        if ($date >= '0321' and $date <= '0419') {
+        if ($date >= '0321' && $date <= '0419') {
             echo 'Овен';
         }
-        if ($date >= '0420' and $date <= '0520') {
+        if ($date >= '0420' && $date <= '0520') {
             echo 'Телец';
         }
-        if ($date >= '0521' and $date <= '0620') {
+        if ($date >= '0521' && $date <= '0620') {
             echo 'Близнецы';
         }
-        if ($date >= '0621' and $date <= '0722') {
+        if ($date >= '0621' && $date <= '0722') {
             echo 'Рак';
         }
-        if ($date >= '0723' and $date <= '0822') {
+        if ($date >= '0723' && $date <= '0822') {
             echo 'Лев';
         }
-        if ($date >= '0823' and $date <= '0922') {
+        if ($date >= '0823' && $date <= '0922') {
             echo 'Дева';
         }
-        if ($date >= '0923' and $date <= '1022') {
+        if ($date >= '0923' && $date <= '1022') {
             echo 'Весы';
         }
-        if ($date >= '1023' and $date <= '1121') {
+        if ($date >= '1023' && $date <= '1121') {
             echo 'Скорпион';
         }
-        if ($date >= '1122' and $date <= '1221') {
+        if ($date >= '1122' && $date <= '1221') {
             echo 'Стрелец';
         }
-        if (($date >= '1222' and $date <= '1231') or ($date >= '0101' and $date <= '0119')) {
+        if (($date >= '1222' && $date <= '1231')||($date >= '0101' && $date <= '0119')) {
             echo 'Козерог';
         }
     }
@@ -172,11 +172,11 @@
 <fieldset>
     <form action = "" method = "post">
         <input type = "text" name = "test" checked placeholder = "31.12">&nbsp Введите дату рождения<br><br>
-        <input type = "submit" name = "submit_4"><br><br>
+        <input type = "submit" name =  "submit_4"><br><br>
     </form>
 
     <?php
-    $zodiac_sign = ['Водолей' => 'предсказание для Водолеев на текущий день',
+    $zodiacSign = ['Водолей' => 'предсказание для Водолеев на текущий день',
         'Рыбы' => 'предсказание для Рыб на текущий день...',
         'Овен' => 'предсказание для Овнов на текущий день...',
         'Телец' => 'предсказание для Тельцов на текущий день...',
@@ -188,49 +188,49 @@
         'Скорпион' => 'предсказание для Скорпионов на текущий день...',
         'Стрелец' => 'предсказание для Стрельцов на текущий день...',
         'Козерог' => 'предсказание для Козерог на текущий день...',
-        
+
     ];
     if (!empty($_REQUEST['submit_4'])) {
         $date = implode(array_reverse(explode('.', $_REQUEST['test'])));
 
-        if ($date >= '0120' and $date <= '0218') {
+        if ($date >= '0120' && $date <= '0218') {
             echo 'Водолей';
         }
-        if ($date >= '0219' and $date <= '0320') {
+        if ($date >= '0219' && $date <= '0320') {
             echo 'Рыбы';
         }
-        if ($date >= '0321' and $date <= '0419') {
+        if ($date >= '0321' && $date <= '0419') {
             echo 'Овен';
         }
-        if ($date >= '0420' and $date <= '0520') {
+        if ($date >= '0420' && $date <= '0520') {
             echo 'Телец';
         }
-        if ($date >= '0521' and $date <= '0620') {
+        if ($date >= '0521' && $date <= '0620') {
             echo 'Близнецы';
         }
-        if ($date >= '0621' and $date <= '0722') {
+        if ($date >= '0621' && $date <= '0722') {
             echo 'Рак';
         }
-        if ($date >= '0723' and $date <= '0822') {
+        if ($date >= '0723' && $date <= '0822') {
             echo 'Лев';
         }
-        if ($date >= '0823' and $date <= '0922') {
+        if ($date >= '0823' && $date <= '0922') {
             echo 'Дева';
         }
-        if ($date >= '0923' and $date <= '1022') {
+        if ($date >= '0923' && $date <= '1022') {
             echo 'Весы';
         }
-        if ($date >= '1023' and $date <= '1121') {
+        if ($date >= '1023' && $date <= '1121') {
             echo 'Скорпион';
         }
-        if ($date >= '1122' and $date <= '1221') {
+        if ($date >= '1122' && $date <= '1221') {
             echo 'Стрелец';
         }
-        if (($date >= '1222' and $date <= '1231') or ($date >= '0101' and $date <= '0119')) {
+        if (($date >= '1222' && $date <= '1231') || ($date >= '0101' && $date <= '0119')) {
             echo 'Козерог';
         }
     }
-    foreach ($zodiac_sign as $key => $elem) {
+    foreach ($zodiacSign as $key => $elem) {
         if ($zodiac === $key) {
             echo $elem;
         }
@@ -241,18 +241,17 @@
 
 //EXERCISE 10
 <fieldset>
-    <form action = "" method = "post">
-        <textarea name = "text" placeholder = "Введите текст" required></textarea>&nbsp
-        <input type = "submit" name = "submit_5"><br><br>
+    <form action="" method="post">
+        <textarea name="text" placeholder="Введите текст" required></textarea>
+        <input type="submit" name="submit_5"><br><br>
     </form>
-
     <?php
     if (!empty($_REQUEST['submit_5'])) {
-        $count_str = explode(' ', $_REQUEST['text']);
-        echo 'количество слов в тексте - ' . count($count_str), '<br>';
+        $countStr = explode(' ', $_REQUEST['text']);
+        echo 'количество слов в тексте - ' . count($countStr), '<br>';
         echo 'количество символов в тексте - ' . strlen($_REQUEST['text']), '<br>';
-        $count_elem = implode($count_str);
-        echo 'количество символов за вычетом пробелов - ' . strlen($count_elem), '<br>';
+        $countElem = implode($countStr);
+        echo 'количество символов за вычетом пробелов - ' . strlen($countElem), '<br>';
     }
     ?>
 </fieldset>
@@ -264,18 +263,17 @@
         <textarea name = "text" placeholder = "Введите текст" required></textarea>&nbsp;&nbsp;&nbsp;&nbsp;
         <input type = "submit" name = "submit_6"><br><br>
     </form>
-
     <?php
     if (!empty($_REQUEST['submit_6'])) {
-        $text = $_REQUEST['text']; 
+        $text = $_REQUEST['text'];
         echo $text . ' - введенная строка', '<br>';
         echo strlen($text) . ' - всего символов', '<br>';
-        $one_item_percent = 100 / strlen($text); 
-        $test_str = count_chars($_REQUEST['text'], 1); 
-        echo count($test_str) . ' - колличество уникальных символов использованых в строке', '<br><br>';
-        foreach ($test_str as $key => $elem) {
-            $percent_elem_in_str = $one_item_percent * $elem;
-            echo "процентное содержание символа \"" . chr($key) . "\" в строке составляет - $percent_elem_in_str%", '<br>';
+        $oneItemPercent = 100 / strlen($text);
+        $testStr = count_chars($_REQUEST['text'], 1);
+        echo count($testStr) . ' - колличество уникальных символов использованых в строке', '<br><br>';
+        foreach ($testStr as $key => $elem) {
+            $percentElemInStr = $oneItemPercent * $elem;
+            echo "процентное содержание символа \"" . chr($key) . "\" в строке составляет - $percentElemInStr%", '<br>';
         }
     }
     ?>
@@ -285,40 +283,36 @@
 //EXERCISE 12
 <fieldset>
     <form action = "" method = "post">
-        <input name = "test" required>&nbsp;&nbsp;&nbsp;&nbsp;
+        <input name = "test" required>;
         <input type = "submit" name = "submit_7"><br><br>
     </form>
-
     <?php
-    $text_str = 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua';
-    echo $text_str . '<br><br>';
-
+    $textStr = 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua';
+    echo $textStr . '<br><br>';
     if (!empty($_REQUEST['submit_7'])) {
-        $text_arr = explode(' ', $text_str); 
-        echo 'Массив слов - ' . $text_str, '<br><br>';
-        $test_str = $_REQUEST['test']; 
-        echo $test_str . ' - строчная переменная из инпута' . '<br><br>';
-        $test_arr = str_split($test_str); 
-        foreach ($text_arr as $elem) { 
+        $textArr = explode(' ', $textStr);
+        echo 'Массив слов - ' . $textStr, '<br><br>';
+        $testStr = $_REQUEST['test'];
+        echo $testStr . ' - строчная переменная из инпута' . '<br><br>';
+        $testArr = str_split($testStr);
+        foreach ($textArr as $elem) {
             $result = $elem;
-            foreach ($test_arr as $item) { 
-                $result = str_replace($item, '', $result, $count); 
-                if ($count > 1) { 
+            foreach ($testArr as $item) {
+                $result = str_replace($item, '', $result, $count);
+                if ($count > 1) {
                     $result = str_pad($result, (strlen($result) + ($count - 1)), $item);
                 }
             }
-            if ((strlen($elem) - strlen($result)) == strlen($test_str)) {
+            if ((strlen($elem) - strlen($result)) == strlen($testStr)) {
                 echo 'Все введенные буквы содержатся в слове: ' . $elem, '<br><hr>';
             }
         }
     }
-
-    function str_replace_once($search, $replace, $text)
+    function strReplaceOnce($search, $replace, $text)
     {
         $pos = strpos($text, $search);
         return $pos !== false ? substr_replace($text, $replace, $pos, strlen($search)) : $text;
     }
-
     $str = 'Helo World!';
     echo $str . '<br>';
     $str = str_replace_once('l', 'LL', $str);
@@ -331,21 +325,19 @@
 //EXERCISE 13
 <fieldset>
     <form action = "" method = "post">
-        <textarea name = "text" placeholder = "Введите текст" required></textarea>&nbsp;&nbsp;
+        <textarea name = "text" placeholder = "Введите текст" required></textarea>
         <input type = "submit" name = "submit_8"><br><br>
     </form>
-
     <?php
-    $text_str = 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua';
-    echo $text_str . '<br><br>'; 
-
+    $textStr = 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua';
+    echo $textStr . '<br><br>';
     if (!empty($_REQUEST['submit_8'])) {
-        $arr_en = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-        $text_arr = explode(' ', $text_str); 
-        foreach ($arr_en as $item) { 
+        $arrEn = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+        $textArr = explode(' ', $textStr);
+        foreach ($arrEn as $item) {
             $flag = false;
-            foreach ($text_arr as $elem) { 
-                if ($item === $elem[0] and $flag === false) {
+            foreach ($textArr as $elem) {
+                if ($item === $elem[0] && $flag === false) {
                     $flag = true;
                     echo '<br>', 'слова на букву ' . $item . ':', '<br>';
                 }
@@ -362,7 +354,7 @@
 //EXERCISE 14
 <fieldset>
     <form action = "" method = "post">
-        <input name = "text" required>&nbsp;&nbsp;&nbsp;&nbsp;
+        <input name = "text" required>
         <input type = "submit" name = "submit_9"><br><br>
     </form>
     <?php
@@ -392,9 +384,9 @@
             'Ь' => '\'', 'Ы' => 'Y', 'Ъ' => '\'',
             'Э' => 'E', 'Ю' => 'Yu', 'Я' => 'Ya',
         );
-        $text_str = $_REQUEST['text'];
-        echo $text_str . '<br>';
-        echo strtr($text_str, $converter);
+        $textStr = $_REQUEST['text'];
+        echo $textStr . '<br>';
+        echo strtr($textStr, $converter);
     }
     ?>
 </fieldset>
@@ -412,8 +404,8 @@
     <?php
 
     if (!empty($_REQUEST['submit_10'])) {
-        $text_str = $_REQUEST['text'];
-        echo $text_str . ' - Введённая строка', '<br><br>';
+        $textStr = $_REQUEST['text'];
+        echo $textStr . ' - Введённая строка', '<br><br>';
         $converter = array(
             'а' => 'a', 'б' => 'b', 'в' => 'v',
             'г' => 'g', 'д' => 'd', 'е' => 'e',
@@ -439,9 +431,9 @@
             'Ь' => '\'', 'Ы' => 'Y', 'Ъ' => '\'',
             'Э' => 'E', 'Ю' => 'Yu', 'Я' => 'Ya',
         );
-        $translit = strtr($text_str, $converter);
+        $translit = strtr($textStr, $converter);
         if ($_REQUEST['test'] == 1) {
-            echo strtr($text_str, $converter) . ' - В транслит', '<br>';
+            echo strtr($textStr, $converter) . ' - В транслит', '<br>';
         } else {
             echo strtr($translit, array_flip($converter)) . ' - Из транслита обратно', '<br>';
         }
@@ -456,16 +448,16 @@
         Вопрос 1
         <?php if (empty($_REQUEST['submit_11'])) echo '<input name="text1" required placeholder="Введите ответ">';
         if (!empty($_REQUEST['submit_11'])) {
-            $question1 = 'Правильный ответ 1'; 
-            $text_str1 = $_REQUEST['text1'];
-            if ($question1 == $text_str1) {
+            $question1 = 'Правильный ответ 1';
+            $textStr1 = $_REQUEST['text1'];
+            if ($question1 == $textStr1) {
                 echo '<b class="Y"> Верно!</b>';
             } else {
                 echo '<b class="N"> Неверно!</b>';
             }
         }
         ?><br><br>
-        <input type = "submit" name = "submit_11"><br><br>
+        <input type = submit" name = "submit_11"><br><br>
     </form>
 </fieldset>
 <br>
@@ -476,15 +468,15 @@
         Вопрос: <br><br>
         <?php
         if (empty($_REQUEST['submit_12'])) {
-            echo '<input type="radio" name="radio" value="1"> - Ответ 1<br>
-<input type="radio" name="radio" value="2"> - Ответ 2<br>
-<input type="radio" name="radio" value="3"> - Ответ 3 <br>
-<br><input type="submit" name="submit_12">';
+            echo '<input type = "radio" name = "radio" value = "1"> - Ответ 1<br>';
+            echo '<input type = "radio" name = "radio" value = "2"> - Ответ 2<br>';
+            echo '<input type = "radio" name = "radio" value = "3"> - Ответ 3 <br>';
+            echo '<br><input type = "submit" name = "submit_12">';
         }
         if (!empty($_REQUEST['submit_12'])) {
-            $question1 = '1'; // Правильный ответ!
+            $question1 = '1'; 
             $text_str1 = $_REQUEST['radio'];
-            if ($question1 == $text_str1) {
+            if ($question1 === $textStr1) {
                 echo '<b class="Y"> Верно!</b>';
             } else {
                 echo '<b class="N"> Неверно!</b>';
@@ -504,14 +496,13 @@
         <input type = "checkbox" name = "check[]" value = "Ответ 3"><br>
         <input type = "checkbox" name = "check[]" value = "Ответ 4"><br>
         <input type = "submit" name = "submit_13"><br><br>
-
         <?php
         if (!empty($_REQUEST['submit_13'])) {
-            $question1 = 'Ответ 2'; 
-            $question2 = 'Ответ 4'; 
+            $question1 = 'Ответ 2';
+            $question2 = 'Ответ 4';
             $text_str = $_REQUEST['check'];
-            if ($question1 == $text_str[0] or $question2 == $text_str[1] or
-                ($question1 == $text_str[0] and $question2 == $text_str[1])) {
+            if ($question1 == $text_str[0] || $question2 == $text_str[1] ||
+                ($question1 == $text_str[0] && $question2 == $text_str[1])) {
                 echo '<b class = "Y"> Верно!</b>';
             } else {
                 echo '<b class = "N"> Неверно!</b>';
@@ -525,14 +516,13 @@
 //EXERCISE 19
 <fieldset>
     <form action = "" method = "post">
-        <input name = "name" placeholder = "Введите число">&nbsp;&nbsp;
+        <input name = "name" placeholder = "Введите число">
         <input type = "submit" name = "submit_14" value = "Факториал"><br><br>
-
         <?php
         if (!empty($_REQUEST['submit_14'])) {
-            $name_int = $_REQUEST['name'];
+            $nameInt = $_REQUEST['name'];
             $result = 1;
-            for ($i = $name_int; $i > 1; $i--) {
+            for ($i = $nameInt; $i > 1; $i--) {
                 $result *= $i;
             }
             echo $result;
@@ -547,35 +537,35 @@
     <form action = "" method = "post">
         <?php
         if (!empty($_REQUEST['submit_21'])) {
-            $arr_int = [];
+            $arrInt = [];
 
-            $arr_int[] = $_REQUEST['A'];
-            $arr_int[] = $_REQUEST['B'];
-            $arr_int[] = $_REQUEST['C'];
+            $arrInt[] = $_REQUEST['A'];
+            $arrInt[] = $_REQUEST['B'];
+            $arrInt[] = $_REQUEST['C'];
 
-            $A_int_pow2 = $arr_int[0] ** 2;
-            $B_int_pow2 = $arr_int[1] ** 2;
-            $C_int_pow2 = $arr_int[2] ** 2;
+            $AIntPow2 = $arrInt[0] ** 2;
+            $BIntPow2 = $arrInt[1] ** 2;
+            $CIntPow2 = $arrInt[2] ** 2;
 
-            $key_max_int = array_keys($arr_int, max($arr_int)); 
-            $key_max_int = $key_max_int[0]; 
+            $keyMaxInt = array_keys($arrInt, max($arrInt));
+            $keyMaxInt = $keyMaxInt[0];
 
-            if ($key_max_int == 0) {
-                if ($A_int_pow2 == ($B_int_pow2 + $C_int_pow2)) {
+            if ($keyMaxInt == 0) {
+                if ($AIntPow2 == ($BIntPow2 + $CIntPow2)) {
                     echo 'числа являются тройкой Пифагора', '<br>';
                 } else {
                     echo 'числа НЕ являются тройкой Пифагора', '<br>';
                 }
             }
-            if ($key_max_int == 1) {
-                if ($B_int_pow2 == ($A_int_pow2 + $C_int_pow2)) {
+            if ($keyMaxInt == 1) {
+                if ($BIntPow2 == ($AIntPow2 + $CIntPow2)) {
                     echo 'числа являются тройкой Пифагора', '<br>';
                 } else {
                     echo 'числа НЕ являются тройкой Пифагора', '<br>';
                 }
             }
-            if ($key_max_int == 2) {
-                if ($C_int_pow2 == ($A_int_pow2 + $B_int_pow2)) {
+            if ($keyMaxInt == 2) {
+                if ($CIntPow2 == ($AIntPow2 + $BIntPow2)) {
                     echo 'числа являются тройкой Пифагора', '<br>';
                 } else {
                     echo 'числа НЕ являются тройкой Пифагора', '<br>';
@@ -583,15 +573,13 @@
             }
         }
         ?>
-
-        <p><input type="number" name="A" placeholder="Введите число"
-                  value="<?php if (!empty($_REQUEST['A'])) echo $_REQUEST['A']; ?>" required></p>
-        <p><input type="number" name="B" placeholder="Введите число"
-                  value="<?php if (!empty($_REQUEST['B'])) echo $_REQUEST['B']; ?>" required></p>
-        <p><input type="number" name="C" placeholder="Введите число"
-                  value="<?php if (!empty($_REQUEST['C'])) echo $_REQUEST['C']; ?>" required></p>
-        <p><input type="submit" name="submit_21"></p>
-
+        <p><input type = "number" name = "A" placeholder = "Введите число"
+                  value = "<?php if (!empty($_REQUEST['A'])) echo $_REQUEST['A']; ?>" required></p>
+        <p><input type = "number" name = "B" placeholder = "Введите число"
+                  value = "<?php if (!empty($_REQUEST['B'])) echo $_REQUEST['B']; ?>" required></p>
+        <p><input type = "number" name="C" placeholder = "Введите число"
+                  value = "<?php if (!empty($_REQUEST['C'])) echo $_REQUEST['C']; ?>" required></p>
+        <p><input type = "submit" name = "submit_21"></p>
     </form>
 </fieldset>
 <br>
@@ -615,7 +603,6 @@
             }
         }
         ?>
-
     </form>
 </fieldset>
 <br>
@@ -623,19 +610,17 @@
 //EXERCISE 23
 <fieldset>
     <form action = "" method = "post">
-
         <p><input type = "number" name = "int" placeholder = "Введите число" required></p>
         <p><input type = "submit" name = "submit_23"></p>
-
         <?php
         if (!empty($_REQUEST['submit_23'])) {
-            $int = $_REQUEST['int']; 
+            $int = $_REQUEST['int'];
             var_dump($int);
             echo ' - Введенное число. Простые множители: ', '<br>';
             for ($i = 2; $i <= $int;) {
                 $a = $int / $i;
                 if (is_int($a)) {
-                    $int = $a; 
+                    $int = $a;
                     echo $i . ' - i', '<br>';
                 } else {
                     $i++;
@@ -654,33 +639,31 @@
                   required>&nbsp;&nbsp;&nbsp;<?php if (!empty($_REQUEST['submit_24'])) {
                 echo $_REQUEST['int_1'];
             } ?></p>
-        <p><input type="number" name="int_2" placeholder="Введите число"
+        <p><input type = "number" name = "int_2" placeholder = "Введите число"
                   required>&nbsp;&nbsp;&nbsp;<?php if (!empty($_REQUEST['submit_24'])) {
                 echo $_REQUEST['int_2'];
             } ?></p>
-        <p><input type="submit" name="submit_24"></p>
+        <p><input type = "submit" name = "submit_24"></p>
 
         <?php
         if (!empty($_REQUEST['submit_24'])) {
-            $int_1 = $_REQUEST['int_1']; 
-            $int_2 = $_REQUEST['int_2']; 
-            $int_arr_1 = []; 
-            $int_arr_2 = [];
+            $int1 = $_REQUEST['int1'];
+            $int2 = $_REQUEST['int2'];
+            $intArr1 = [];
+            $intArr2 = [];
 
-            for ($i = 1; $i <= $int_1; $i++) {
-                if ($int_1 % $i == 0) {
-                    $int_arr_1[] = $i;
+            for ($i = 1; $i <= $int1; $i++) {
+                if ($int1 % $i == 0) {
+                    $intArr1[] = $i;
                 }
             }
 
-            for ($j = 1; $j <= $int_2; $j++) {
-                if ($int_2 % $j == 0) {
-                    $int_arr_2[] = $j;
+            for ($j = 1; $j <= $int2; $j++) {
+                if ($int2 % $j == 0) {
+                    $intArr2[] = $j;
                 }
             }
-
-
-            var_dump(array_intersect($int_arr_1, $int_arr_2));
+            var_dump(array_intersect($intArr1, $intArr2));
             echo ' - список общих делителей этих двух чисел.';
         }
         ?>
@@ -691,37 +674,32 @@
 //EXERCISE 25
 <fieldset>
     <form action = "" method = "post">
-        <p><input type = "number" name = "int_1" placeholder = "Введите число"
-                  required>&nbsp;&nbsp;&nbsp;<?php if (!empty($_REQUEST['submit_25'])) {
-                echo $_REQUEST['int_1'];
+        <p><input type = "number" name = "int1" placeholder = "Введите число" required>
+        <?php if (!empty($_REQUEST['submit_25'])) {
+                echo $_REQUEST['int1'];
             } ?></p>
-        <p><input type="number" name="int_2" placeholder="Введите число"
-                  required>&nbsp;&nbsp;&nbsp;<?php if (!empty($_REQUEST['submit_25'])) {
-                echo $_REQUEST['int_2'];
+        <p><input type = "number" name = "int2" placeholder = "Введите число" required>
+        <?php if (!empty($_REQUEST['submit_25'])) {
+                echo $_REQUEST['int2'];
             } ?></p>
-        <p><input type="submit" name="submit_25"></p>
+        <p><input type = "submit" name = "submit_25"></p>
         <?php
         if (!empty($_REQUEST['submit_25'])) {
-            $int_1 = $_REQUEST['int_1']; 
-            $int_2 = $_REQUEST['int_2']; 
-            $int_arr_1 = [];
-            $int_arr_2 = [];
-
-            for ($i = 1; $i <= $int_1; $i++) {
-                if ($int_1 % $i == 0) {
-                    $int_arr_1[] = $i;
+            $int1 = $_REQUEST['int1'];
+            $int2 = $_REQUEST['int2'];
+            $intArr1 = [];
+            $intArr2 = [];
+            for ($i = 1; $i <= $int1; $i++) {
+                if ($int1 % $i == 0) {
+                    $intArr1[] = $i;
                 }
             }
- 
-
-            for ($j = 1; $j <= $int_2; $j++) {
-                if ($int_2 % $j == 0) {
-                    $int_arr_2[] = $j;
+            for ($j = 1; $j <= $int2; $j++) {
+                if ($int2 % $j == 0) {
+                    $intArr2[] = $j;
                 }
             }
-
-
-            var_dump(max(array_intersect($int_arr_1, $int_arr_2)));
+            var_dump(max(array_intersect($intArr1, $intArr2)));
             echo ' - наибольший общий делитель этих двух чисел.';
         }
         ?>
@@ -732,35 +710,34 @@
 //EXERCISE 26
 <fieldset>
     <form action = "" method = "post">
-        <p><input type = "number" name = "int_1" placeholder = "Введите число"
-                  required>&nbsp;&nbsp;&nbsp;<?php if (!empty($_REQUEST['submit_26'])) {
-                echo $_REQUEST['int_1'];
+        <p><input type = "number" name = "int1" placeholder="Введите число" required>
+        <?php if (!empty($_REQUEST['submit_26'])) {
+                echo $_REQUEST['int1'];
             } ?></p>
-        <p><input type = "number" name = "int_2" placeholder = "Введите число"
-                  required>&nbsp;&nbsp;&nbsp;<?php if (!empty($_REQUEST['submit_26'])) {
-                echo $_REQUEST['int_2'];
+        <p><input type = "number" name = "int2" placeholder = "Введите число" required>
+        <?php if (!empty($_REQUEST['submit_26'])) {
+                echo $_REQUEST['int2'];
             } ?></p>
         <p><input type = "submit" name = "submit_26"></p>
 
         <?php
         if (!empty($_REQUEST['submit_26'])) {
-            $int_1 = $_REQUEST['int_1']; 
-            $int_2 = $_REQUEST['int_2']; 
-            $int_arr_1 = [];
-            $int_arr_2 = [];
-            $smallest_number = []; 
+            $int1 = $_REQUEST['int1'];
+            $int2 = $_REQUEST['int2'];
+            $intArr1 = [];
+            $intArr2 = [];
+            $smallestNumber = [];
 
             for ($i = 1, $j = 1; ; $i++, $j++) {
-                $int_arr_1[] = $int_1 * $i;
-                $int_arr_2[] = $int_2 * $j;
-                $smallest_number = array_intersect($int_arr_1, $int_arr_2); 
-                if (count($smallest_number) > 0) { 
+                $intArr1[] = $int1 * $i;
+                $intArr2[] = $int2 * $j;
+                $smallestNumber = arrayIntersect($intArr1, $intArr2);
+                if (count($smallestNumber) > 0) {
                     break;
                 }
             }
-            print_r($smallest_number);
+            print_r($smallestNumber);
             echo ' - число, которое делится и на одно, и на второе из введенных чисел.';
-
         }
         ?>
     </form>
@@ -791,7 +768,7 @@
                 <option value = "5">Май</option>
             </select></p>
 
-        <p><select name = "year">
+        <p><select name="year">
                 <option>2020</option>
                 <option>2021</option>
                 <option>2022</option>
