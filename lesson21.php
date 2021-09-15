@@ -202,7 +202,7 @@ echo 'first: ' . $str, '<br>';
 
 $str1 = 'hello!';
 $str2 = '';
-$str_len = strlen($str1);
+$stringLen = strlen($str1);
 
 for ($i = $str_len; $i > 0; $i--) {
     $str2 .= substr($str1, $i - 1, 1);
@@ -212,9 +212,9 @@ echo 'second: ' . $str2, '<br>';
 
 $str1 = 'hello!';
 $str2 = '';
-$str_len = strlen($str1);
+$stringLen = strlen($str1);
 
-for ($i = $str_len; $i > 0; $i--) {
+for ($i = $stringLen; $i > 0; $i--) {
     $str2 .= $str1[$i - 1];
 }
 echo 'third: ' . $str2, '<br>';
@@ -223,7 +223,6 @@ echo '<hr><br>';
 
 //EXERCISE 22
 $str1 = 'hello!';
-
 $arr = str_split($str1);
 $i = 0;
 foreach ($arr as $elem) {
@@ -232,8 +231,8 @@ foreach ($arr as $elem) {
 echo strlen($str1) . ' - ' . $i . '<br>';
 
 $str1 = 'hello!';
-$str_len = count(str_split($str1));
-echo $str_len;
+$stringLen = count(str_split($str1));
+echo $stringLen;
 echo '<hr><br>';
 
 
@@ -242,7 +241,7 @@ $str = 'QwErTy';
 $str1 = '';
 $arr = str_split($str);
 foreach ($arr as $elem) {
-    if (ord($elem) >= 97 and ord($elem) <= 122) {
+    if (ord($elem) >= 97 && ord($elem) <= 122) {
         $str1 .= strtoupper($elem);
     } else {
         $str1 .= strtolower($elem);
@@ -253,7 +252,7 @@ echo '<hr><br>';
 
 
 //EXERCISE 24
-$str = 'var_text_hello';
+$str = 'text_hello';
 $str1 = '';
 $arr = explode('_', $str);
 foreach ($arr as $elem) {
@@ -309,18 +308,18 @@ echo '<hr><br>';
 //EXERCISE 29
 $str = '987654321';
 echo $str, '<br>';
-$new_str = '';
+$newStr = '';
 for ($i = 0; $i < strlen($str); $i++) {
     if ($str[$i] % 2 != 0) {
-        $new_str .= $str[$i];
+        $newStr .= $str[$i];
     }
 }
-echo $new_str;
+echo $newStr;
 echo '<hr><br>';
 
 
 //EXERCISE 30
-$str = '12345678'; 
+$str = '12345678';
 for ($i = 0, $j = 1; $i < strlen($str); $i += 2, $j += 2) {
     $a = $str[$i];
     $b = $str[$j];
@@ -337,38 +336,38 @@ echo '<hr><br>';
 
 //EXERCISE 31
 $arr = [1, 2, 3, 3, 4, 4, 5];
-function get_arr_unique($arr)
+function getArrUnique($arr)
 {
-    $new_arr = [];
+    $newArr = [];
     foreach ($arr as $elem) {
-        if (in_array($elem, $new_arr) == false) {
-            $new_arr[] = $elem;
+        if (in_array($elem, $newArr) == false) {
+            $newArr[] = $elem;
         }
     }
-    return $new_arr;
+    return $newArr;
 }
 
-print_r(get_arr_unique($arr));
+print_r(getArrUnique($arr));
 echo '<hr><br>';
 
 
 //EXERCISE 32
 $arr = [1, 2, 3, 3, 4, 4, 5];
-function get_un_unique($arr)
+function getUnUnique($arr)
 {
-    $new_arr = [];
+    $newArr = [];
     for ($i = 0; $i < count($arr); $i++) {
         $elem = $arr[$i];
         unset($arr[$i]);
         if (in_array($elem, $arr)) {
-            $new_arr[] = $elem;
+            $newArr[] = $elem;
         }
         $arr[$i] = $elem;
     }
-    return $new_arr;
+    return $newArr;
 }
 
-var_dump(get_un_unique($arr));
+var_dump(getUnUnique($arr));
 echo '<hr><br>';
 
 
@@ -392,11 +391,11 @@ echo '<hr><br>';
 
 //EXERCISE 34
 $arr = ['http://google.com', 'https://vk.com', 'https://youtube.com'];
-$new_arr = [];
+$newArr = [];
 foreach ($arr as $elem) {
     if (strpos($elem, 'http://') !== false) {
-        $new_arr[] = $elem;
+        $newArr[] = $elem;
     }
 }
-var_dump($new_arr);
+var_dump($newArr);
 ?>
