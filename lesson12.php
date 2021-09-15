@@ -1,21 +1,21 @@
 <?php
 //EXERCISE 1
-function square($a){
+function getSquare($a) {
     return $a * $a;
 }
 
 //EXERCISE 2
-function summ($a, $b){
+function getSumm($a, $b) {
     return $a + $b;
 }
 
 //EXERCISE 3
-function aMinusBandDividedC($a, $b, $c){
+function getAMinusBAndDividedC($a, $b, $c) {
     return ($a - $b) / $c;
 }
 
 //EXERCISE 4
-function dayOfTheWeek($a){
+function getDayOfTheWeek($a) {
     switch ($a) {
         case 1:
             return "Понедельник";
@@ -38,5 +38,7 @@ function dayOfTheWeek($a){
         case 7:
             return "Воскресенье";
             break;
+        default:
+            echo "Введите число от 1 до 8";
     }
 }
