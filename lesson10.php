@@ -4,7 +4,7 @@
     <input type = "submit">
 </form>
 <?php
-if(isset($_REQUEST["name"])){
+if (isset($_REQUEST["name"])) {
     $name = $_REQUEST["name"];
     echo "Привет, $name";
 }
@@ -18,10 +18,10 @@ if(isset($_REQUEST["name"])){
     <input type = "submit" name = "submit">
 </form>
 <?php
-if (isset($_REQUEST['submit'])){
-    $name = strip_tags($_REQUEST['name']);
-    $age = strip_tags($_REQUEST['age']);
-    $messsage = strip_tags($_REQUEST['message']);
+if (isset($_REQUEST["submit"])) {
+    $name = strip_tags($_REQUEST["name"]);
+    $age = strip_tags($_REQUEST["age"]);
+    $messsage = strip_tags($_REQUEST["message"]);
     echo "Привет, $name, $age лет. <br> Твое сообщение: $message";
 }
 ?>
@@ -30,14 +30,12 @@ if (isset($_REQUEST['submit'])){
 <?php
 	if (!isset($_REQUEST["age"])) {
 ?>
-		<form action="" method="GET">
-			<input type="text" name="age">
-			<input type="submit">
+		<form action = "" method = "GET">
+			<input type = "text" name = "age">
+			<input type = "submit">
 		</form>
 <?php
 	}
-?>
-<?php
 	if (isset($_REQUEST["age"])) {
 		$age = strip_tags($_REQUEST["age"]);
 		echo "Ваш возраст: $age";
@@ -45,10 +43,10 @@ if (isset($_REQUEST['submit'])){
 ?>
 
 //EXERCISE 4
-<form action="" method="GET">
-	<input type="text" name="login">
-	<input type="password" name="pass">
-	<input type="submit" name="submit">
+<form action = "" method = "GET">
+	<input type = "text" name = "login">
+	<input type = "password" name = "pass">
+	<input type = "submit" name = "submit">
 </form>
 
 <?php
@@ -57,7 +55,7 @@ if (isset($_REQUEST['submit'])){
 		$pass = "123456";
 		$formLogin = trim($_REQUEST["login"]);
 		$formPass = trim($_REQUEST["pass"]);
-		if ($login == $formLogin and $pass == $formPass) {
+		if ($login == $formLogin && $pass == $formPass) {
 			echo "Доступ разрешен!";
 		} else {
 			echo "Доступ запрещен!";
@@ -66,9 +64,9 @@ if (isset($_REQUEST['submit'])){
 ?>
 
 //EXERCISE 5
-<form action="" method="GET">
-	<input name="name" value="<?php if (isset($_GET['name'])) echo $_GET['name']; ?>">
-	<input type="submit">
+<form action = "" method = "GET">
+	<input name = "name" value = "<?php if (isset($_GET['name'])) echo $_GET['name']; ?>">
+	<input type = "submit">
 </form>
 <?php
 	if (isset($_REQUEST["submit"])) {
@@ -78,10 +76,9 @@ if (isset($_REQUEST['submit'])){
 ?>
 
 //EXERCISE 6
-<form action="" method="GET">
-	<input name="name" value="<?php if (isset($_GET['name'])) echo $_GET['name']; ?>">
-	<textarea name="message">
+<form action = "" method = "GET">
+	<input name = "name" value = "<?php if (isset($_GET['name'])) echo $_GET['name']; ?>">
+	<textarea name = "message">
 		<?php if (isset($_GET["message"])) echo $_GET["message"]; ?>
 	</textarea>
-	<input type="submit">
-</form>
+	<input type = "submit">
