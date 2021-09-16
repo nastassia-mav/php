@@ -204,7 +204,7 @@ $str1 = 'hello!';
 $str2 = '';
 $stringLen = strlen($str1);
 
-for ($i = $str_len; $i > 0; $i--) {
+for ($i = $stringLen; $i > 0; $i--) {
     $str2 .= substr($str1, $i - 1, 1);
 }
 echo 'second: ' . $str2, '<br>';
