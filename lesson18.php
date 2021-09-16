@@ -1,7 +1,7 @@
 <?php
 
 //EXERCISE 1
-function transliteration($string)
+function transliteration(string $string):string
 {
     $converter = array(
         'а' => 'a', 'б' => 'b', 'в' => 'v',
@@ -52,7 +52,7 @@ echo getPluralOrSingular(6, 'банан', 'банана', 'бананов');
 echo '<br>';
 
 //EXERCISE 3
-function happyTicket(string $string)
+function getHappyTicket(string $string):string
 {
     $arr = str_split($string, 1);
     $sumFirst3Dig = 0;
@@ -65,11 +65,11 @@ function happyTicket(string $string)
     }
     return $sumFirst3Dig + $sumSecond3Dig;
 }
-echo happyTicket(5552);
+echo getHappyTicket(5552);
 echo '<br>';
 
 //EXERCISE 4
-function getDivisorsSum(int $number)
+function getDivisorsSum(int $number):int
 {
     $sum = 0;
     for ($i = 1; $i < $number; $i++) {
@@ -80,7 +80,7 @@ function getDivisorsSum(int $number)
     return $sum;
 }
 
-function frendlyNumber(int $nOne, int $nTwo)
+function frendlyNumber(int $nOne, int $nTwo):string
 {
     if (getDivisorsSum($nOne) == $nTwo && getDivisorsSum($nTwo) == $nOne && $nOne !== $nTwo && $nOne < $nTwo) {
         return 'Числа ' . $nOne . ' и ' . $nTwo . ' являются дружественными. <br>';
